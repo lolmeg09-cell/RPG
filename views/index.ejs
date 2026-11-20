@@ -1,0 +1,23 @@
+<%- include("./partials/head.ejs") %>
+<body>
+  <%- include("./partials/nav.ejs")%>
+  <h1>Free burgers from RPG Sjappa</h1>
+
+  <div class="f">
+    <% food.forEach(function(f) { %>
+      <div class="f">
+
+        <img src="<%= f.bildeurl %>" alt="">
+        <h3><%= f.tittel %></h3>
+        <p><%= f.beskrivelse %> </p>
+        <p><%= f.ingredienser %> </p>
+        <p><%= f.kategori %> </p>
+        <p><%= f.pris %> </p>
+        <button>Buy</button>
+      </div>
+      <% }); %>
+  </div>
+
+  
+</body>
+</html>

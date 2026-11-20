@@ -1,0 +1,22 @@
+<%- include("./partials/head.ejs") %>
+<body>
+  <%- include("./partials/nav.ejs")%>
+  <h1>Register user here</h1>
+  <p>This will show up on main page</p>
+  <form action="" method="post">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email">
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password">
+
+    <label for="repetPassword">Repeat Password</label>
+    <input type="password" name="repetPassword" id="repetPassword">
+
+    <button>Registrer user</button>
+    <a href="/login">Log inn</a>
+    
+  </form>
+  
+</body>
+</html>

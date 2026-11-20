@@ -1,0 +1,259 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Figtree:wght@400;500;600&family=Pixelify+Sans:wght@600&display=swap");
+
+:root {
+  --bg: #f3f1f8;
+  --surface: #ffffff;
+  --ink: #1b1b3a;
+  --muted: #5d5d7a;
+  --line: #e1deee;
+  --ketchup: #d93b30;
+  --ketchup-dark: #b72d24;
+  --mustard: #f2b632;
+  --radius: 14px;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Figtree", system-ui, sans-serif;
+  --font-pixel: "Pixelify Sans", monospace;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ---------- Navigation (centered) ---------- */
+nav {
+  background: var(--surface);
+  border-bottom: 1px solid var(--line);
+}
+nav .nav-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.9rem 1.5rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+}
+.brand {
+  font-family: var(--font-pixel);
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--ketchup);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem;
+}
+nav ul a {
+  display: block;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+nav ul a:hover { background: var(--bg); }
+
+/* ---------- Page header banner ---------- */
+.page-head {
+  background: var(--ink);
+  color: #fff;
+  padding: 3rem 1.5rem 3.25rem;
+  border-bottom: 5px solid var(--mustard);
+}
+h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(1.9rem, 5vw, 3rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+.page-head p {
+  margin: 0.6rem auto 0;
+  color: #c9c7e0;
+  font-size: 1.05rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+/* ---------- Menu grid (centered, compact cards) ---------- */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 250px));
+  justify-content: center;
+  gap: 1.5rem;
+}
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 3px rgba(27, 27, 58, 0.08);
+}
+.card-media { position: relative; }
+.card-media img {
+  display: block;
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  background: var(--line);
+}
+.tag {
+  position: absolute;
+  top: 0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ink);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.card-body {
+  padding: 1rem 1.1rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  line-height: 1.25;
+  margin: 0 0 0.3rem;
+}
+.card .desc {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+.card .ingredients {
+  margin: 0 0 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--line);
+  width: 100%;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+.card-foot {
+  margin-top: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.price {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.2rem;
+  background: var(--mustard);
+  padding: 0.05rem 0.8rem;
+  border-radius: 8px;
+}
+.card-foot button { width: 100%; }
+
+/* ---------- Buttons ---------- */
+button,
+.btn {
+  font: inherit;
+  font-weight: 600;
+  background: var(--ketchup);
+  color: #fff;
+  border: 0;
+  border-radius: 10px;
+  padding: 0.6rem 1.3rem;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+button:hover { background: var(--ketchup-dark); }
+
+/* ---------- Forms (centered card) ---------- */
+.form-card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem;
+  display: grid;
+  gap: 1.1rem;
+  text-align: left;
+  box-shadow: 0 1px 3px rgba(27, 27, 58, 0.08);
+}
+.form-card h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.25rem;
+}
+.field { display: grid; gap: 0.35rem; }
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+label { font-weight: 600; font-size: 0.95rem; }
+input,
+textarea {
+  width: 100%;
+  font: inherit;
+  color: var(--ink);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 0.65rem 0.85rem;
+}
+input::placeholder,
+textarea::placeholder { color: #9a98b3; }
+textarea { min-height: 80px; resize: vertical; }
+.form-card button {
+  width: 100%;
+  padding: 0.75rem 1.6rem;
+  margin-top: 0.25rem;
+}
+
+/* ---------- Accessibility ---------- */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--mustard);
+  outline-offset: 2px;
+}
+input:focus,
+textarea:focus { border-color: var(--ink); }
+
+@media (max-width: 560px) {
+  .field-row { grid-template-columns: 1fr; }
+  .form-card { padding: 1.4rem; }
+  .menu-grid { grid-template-columns: minmax(0, 320px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
